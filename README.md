@@ -1,4 +1,4 @@
-# Hypernetes architecture
+# Hypernetes
 
 Hypernetes is a secure, multi-tenant CaaS powered by Hyper, Kubernetes and OpenStack. Simply put:
 
