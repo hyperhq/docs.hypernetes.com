@@ -1,27 +1,24 @@
 # Hypernetes
 
-Hypernetes is a secure, multi-tenant CaaS powered by Hyper, Kubernetes and OpenStack. Simply put:
+## What is Hypernetes?
 
-Hypernetes = KeyStone + Cinder/Neutron + Hyper + Kubernetes
+Hypernetes is a secure, multi-tenant [Kubernetes](kubernetes.io) distro. Simply put,
 
-Hypernetes ensures:
+Hypernetes = Bare-metal + [Hyper](hyper.sh) + Kubernetes + [KeyStone](https://github.com/openstack/keystone) + [Cinder](https://github.com/openstack/cinder) + [Neutron](https://github.com/openstack/neutron).
 
-- multi-tenancy (together with Keystone)
-- network isolation (by Neutron)
-- persistent storage management (by Cinder)
-- container orchestration (by Kubernetes)
+## What Hypernetes does?
+
+Hypernetes envisions a future of ***"Container-as-a-Service without IaaS"***. The idea is to combine the orchestration power in Kubernetes and [the runtime isolation in Hyper](https://hyper.sh/why-hyper.html) to build the truly secure multi-tenant CaaS platform. 
+
+![](https://trello-attachments.s3.amazonaws.com/55545e127c7cbe0ec5b82f2b/1660x705/895000bf0d7e25aee600d3cfaf0fd3f2/upload_10_19_2015_at_3_02_11_PM.png)
+
+Hypernetes also integrates with a number of OpenStack projects:
+
+- Keystone (Authentication)
+- Neutron (SDN)
+- Cinder/Ceph (Persistent Storage)
+
+## How Hypernetes works?
 
 ![Architecture Diagram](architecture.png?raw=true "Architecture overview")
 
-### About Hyper
-
-Hyper is a hypervisor-agnostic Docker runtime. It allows running Docker images with any hypervisor (KVM, Xen, Vbox, ESX). Hyper is different from the minimalist Linux distros like CoreOS by the fact that Hyper runs on the physical box and loads the Docker images from the metal into the VM instance, in which no guest OS is present. Instead of virtualizing a complete operating system, Hyper boots a minimalist kernel in the VM to host the Docker images (Pod).
-
-With this approach, Hyper is able to bring some encouraging merits:
-
-- 300ms to boot a new HyperVM instance with a Pod of Docker images
-- 20MB for min Mem footprint of a HyperVM instance
-- Immutable HyperVM, only kernel+images, serving as atomic unit (Pod) for scheduling
-- Immune from the shared kernel problem in LXC – i.e. isolated by VM
-- Work seamlessly with OpenStack components, e.g. Neutron, Cinder, due to the nature of a hypervisor
-- BYOK, bring-your-own-kernel is somewhat mandatory for a public cloud platform
