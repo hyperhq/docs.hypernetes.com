@@ -21,7 +21,7 @@ export OS_REGION_NAME=RegionOne
 
 **Install kubectl**
 
-TODO: Provide an URL to download Kubectl
+Download kubernetes-client at <https://github.com/hyperhq/hypernetes/releases> and extract `kubectl` to your system PATH.
 
 **Setup kubectl auth options**
 
