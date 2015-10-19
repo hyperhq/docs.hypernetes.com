@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Network
+metadata:
+  name: net1
+  tenant: demo
+spec:
+  subnets:
+    subnet1:
+      cidr: 192.168.0.0/24
+      gateway: 192.168.0.1
