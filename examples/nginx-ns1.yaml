@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: ns1
+spec:
+  type: NetworkProvider
+  ports:
+  - port: 8078
+    name: http
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: nginx
