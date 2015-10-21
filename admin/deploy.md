@@ -107,7 +107,7 @@ Create Kubernetes log dir
 
 ```shell
 mkdir /var/log/kubernetes
-chown kube:kube kubernetes/
+chown kube:kube /var/log/kubernetes
 ```
 
 Configure etcd
@@ -168,7 +168,6 @@ Configure kube-proxy
 
 ```shell
 # cat /etc/kubernetes/proxy
-###
 # Kubernetes proxy config
 # default config should be adequate
 
@@ -187,7 +186,7 @@ KUBELET_ADDRESS="--address=0.0.0.0"
 # You may leave this blank to use the actual hostname
 KUBELET_HOSTNAME=""
 # location of the api-server
-KUBELET_API_SERVER="--api_servers=http://minion-1:8080"
+KUBELET_API_SERVER="--api_servers=http://kube-master:8080"
 # Add your own!
 KUBELET_ARGS="--container-runtime=hyper --network-provider=openstack --cinder-config=/etc/kubernetes/cinder.conf"
 
