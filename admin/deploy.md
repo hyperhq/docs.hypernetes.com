@@ -108,6 +108,8 @@ Create Kubernetes log dir
 ```shell
 mkdir /var/log/kubernetes
 chown kube:kube /var/log/kubernetes
+mkdir /var/run/kubernetes/
+chown kube:kube /var/run/kubernetes/
 ```
 
 Configure etcd
@@ -149,7 +151,7 @@ KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.254.0.0/16"
 # default admission control policies
 KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
 # Add your own!
-KUBE_API_ARGS="--service-account-key-file=/var/lib/kubernetes/serviceaccount.key --experimental-keystone-url=https://keystone-server:2349"
+KUBE_API_ARGS="--service-account-key-file=/var/lib/kubernetes/serviceaccount.key --experimental-keystone-url=https://keystone-server:2349 --authorization-mode=Keystone"
 ```
 
 Configure kube-controller-manager
