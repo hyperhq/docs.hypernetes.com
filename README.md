@@ -2,9 +2,9 @@
 
 ## What is Hypernetes?
 
-Hypernetes is a secure, multi-tenant [Kubernetes](kubernetes.io) distro. Simply put,
+Hypernetes is a secure, multi-tenant [Kubernetes](http://kubernetes.io) distro. Simply put,
 
-Hypernetes = Bare-metal + [Hyper](hyper.sh) + Kubernetes + [KeyStone](https://github.com/openstack/keystone) + [Cinder](https://github.com/openstack/cinder) + [Neutron](https://github.com/openstack/neutron).
+Hypernetes = Bare-metal + [Hyper](https://hyper.sh) + Kubernetes + [KeyStone](https://wiki.openstack.org/wiki/Keystone) + [Cinder](https://wiki.openstack.org/wiki/Cinder) + [Neutron](https://wiki.openstack.org/wiki/Neutron).
 
 ## What Hypernetes does?
 
