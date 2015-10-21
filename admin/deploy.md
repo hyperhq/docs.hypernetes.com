@@ -34,7 +34,8 @@ See more at [Kubernetes getstarted guide](http://kubernetes.io/gettingstarted/)
 KubeStack is an OpenStack network provider for Kubernetes and it is deployed on all Kubernetes masters and nodes.
 
 ```shell
-cd $GOPATH
+mkdir -p $GOPATH/src/github.com/hyperhq
+cd $GOPATH/src/github.com/hyperhq
 git clone https://github.com/hyperhq/kubestack.git
 cd kubestack
 make && make install
