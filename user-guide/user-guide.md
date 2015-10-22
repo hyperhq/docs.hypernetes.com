@@ -113,7 +113,7 @@ nginx     1/1       Running   0          2m
 
 ## Manage Pod with Cinder volume
 
-Hypernetes [Volumes](http://kubernetes.io/v1.0/docs/user-guide/volumes.html) supports native Cinder volumes (only rbd backend is supported now), which means you can simply create a Pod with Cinder volume. A sample Pod with Cinder volume `651b2a7b-683e-47e1-bdd6-e3c62e8f91c0` is
+Hypernetes [Volumes](http://kubernetes.io/v1.0/docs/user-guide/volumes.html) support native Cinder volumes (only rbd backend is supported now), which means that you can simply create a Pod with Cinder volume. A sample Pod with Cinder volume `651b2a7b-683e-47e1-bdd6-e3c62e8f91c0` is
 
 ```yaml
 apiVersion: v1

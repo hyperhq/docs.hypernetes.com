@@ -21,7 +21,7 @@ Don't forget to deploy neutron L2 agent and Ceph client for Kubernetes nodes.
 
 ## Deploy Kubernetes
 
-Since Hypernetes is Kubernetes based, you can deploy Hypernetes following same procedure as kubernetes. Here are some distribution-specific links:
+Since Hypernetes is Kubernetes based, you can deploy Hypernetes following the same procedure as kubernetes. Here are some distribution-specific links:
 
 * [deploy Kubernetes on centos](http://kubernetes.io/v1.0/docs/getting-started-guides/centos/centos_manual_config.html)
 * [deploy Kubernetes on ubuntu](http://kubernetes.io/v1.0/docs/getting-started-guides/ubuntu.html)
