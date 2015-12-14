@@ -1,5 +1,7 @@
 # Hypernetes
 
+Notes: This documents applies to v0.1 and v0.2 version of Hypernetes.
+
 ## What is Hypernetes?
 
 Hypernetes is a secure, multi-tenant [Kubernetes](kubernetes.io) distro. Simply put,
