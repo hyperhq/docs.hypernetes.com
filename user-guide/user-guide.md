@@ -23,12 +23,11 @@ export OS_REGION_NAME=RegionOne
 
 Download kubernetes-client at <https://github.com/hyperhq/hypernetes/releases> and extract `kubectl` to your system PATH.
 
-**Setup kubectl auth options**
+**Setup kubectl options**
 
 ```shell
-kubectl config set-credentials default --username=username --password=password
-kubectl config set-cluster default --server=https://kubernetes-master:6443 --insecure-skip-tls-verify=true
-kubectl config set-context default --cluster=default --user=default
+kubectl config set-cluster default --server=http://kubernetes-master:8080 --insecure-skip-tls-verify=true
+kubectl config set-context default --cluster=default
 kubectl config use-context default
 ```
 
@@ -41,8 +40,8 @@ apiVersion: v1
 kind: Network
 metadata:
   name: net1
-  tenant: demo
 spec:
+  tenantID: 065f210a2ca9442aad898ab129426350
   subnets:
     subnet1:
       cidr: 192.168.0.0/24
@@ -53,8 +52,8 @@ spec:
 # kubectl create -f ./network.yaml
 network "net1" created
 # kubectl get network
-NAME      SUBNETS          PROVIDERNETWORKID   TENANT    LABELS    STATUS
-net1      192.168.0.0/24                       demo      <none>    Active
+NAME      SUBNETS          PROVIDERNETWORKID    LABELS    STATUS
+net1      192.168.0.0/24                        <none>    Active
 ```
 
 This operation will create a new Neutron network with a default router and a subnet `192.168.0.0/24` automatically.
@@ -78,9 +77,9 @@ spec:
 # kubectl create -f ./namespace.yaml
 namespace "ns1" created
 # kubectl get namespace
-NAME      LABELS    TENANT    STATUS    AGE
-default   <none>              Active    30d
-ns1       <none>    default   Active    6m
+NAME      LABELS    STATUS    AGE
+default   <none>    Active    30d
+ns1       <none>    Active    6m
 ```
 
 ## Manage Pod
@@ -167,7 +166,7 @@ NAME      CLUSTER_IP       EXTERNAL_IP   PORT(S)    SELECTOR    AGE
 nginx     10.254.223.206                 8078/TCP   app=nginx   10m
 ```
 
-Vluster service `10.254.223.206:8078` can be only visited on Pods in namespace `ns1`.
+Cluster service `10.254.223.206:8078` can be only visited on Pods in namespace `ns1`.
 
 Now let's create another service `nginx2-ns1.yaml`. It's the same configuration as `nginx` service, but with externalIP `23.23.0.30`
 
@@ -207,8 +206,6 @@ Notes about service `nginx2`
 ## clean up
 
 ```sh
-kubectl --namespace=ns1 delete svc nginx nginx2
-kubectl --namespace=ns1 delete pod nginx
 kubectl delete namespace ns1
 kubectl delete network net1
 ```

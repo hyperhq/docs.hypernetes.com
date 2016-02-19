@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Network
 metadata:
   name: net1
-  tenant: demo
 spec:
+  tenantID: 065f210a2ca9442aad898ab129426350
   subnets:
     subnet1:
       cidr: 192.168.0.0/24

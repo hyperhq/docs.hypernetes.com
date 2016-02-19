@@ -12,25 +12,6 @@ Create OpenStack `demo` tenant
 openstack project create demo
 ```
 
-Create a spec file of demo tenant `demo-tenant.yaml`
-
-```yaml
-apiVersion: v1
-kind: Tenant
-metadata:
-  name: demo
-```
-
-Create demo tenant
-
-```sh
-# kubectl create -f ./demo-tenant.yaml
-# kubectl get tenant
-NAME      LABELS    STATUS    AGE
-default   <none>    Active    23h
-demo      <none>    Active    57m
-```
-
 ### User management
 
 You can simply add users to any existing tenant using an OpenStack client. For exmaple, these commands add a `demouser` to tenant `demo`:
