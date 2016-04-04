@@ -73,7 +73,7 @@ Requires=openvswitch.service
 [Service]
 ExecStart=/usr/local/bin/kubestack \
   -logtostderr=false -v=4 \
-  -group=kube \
+  -port=:4237 \
   -log_dir=/var/log/kubestack \
   -conf=/etc/kubestack.conf
 Restart=on-failure
@@ -163,7 +163,7 @@ Configure kube-controller-manager
 # defaults from config and apiserver should be adequate
 
 # Add your own!
-KUBE_CONTROLLER_MANAGER_ARGS="--service-account-private-key-file=/var/lib/kubernetes/serviceaccount.key --network-provider=openstack"
+KUBE_CONTROLLER_MANAGER_ARGS="--service-account-private-key-file=/var/lib/kubernetes/serviceaccount.key --network-provider=localhost:4237"
 ```
 
 Configure kube-proxy
@@ -190,7 +190,7 @@ KUBELET_HOSTNAME=""
 # location of the api-server
 KUBELET_API_SERVER="--api_servers=http://kube-master:8080"
 # Add your own!
-KUBELET_ARGS="--container-runtime=hyper --network-provider=openstack --cinder-config=/etc/kubernetes/cinder.conf"
+KUBELET_ARGS="--container-runtime=hyper --network-provider=localhost:4237 --cinder-config=/etc/kubernetes/cinder.conf"
 
 # cat /etc/kubernetes/cinder.conf
 [Global]
