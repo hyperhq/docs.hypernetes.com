@@ -1,6 +1,6 @@
 # Hypernetes deployment
 
-This document covers the basic depolyment procedure for Hypernetes. If you are looking for detailed depolyment of Kubernetes, refer to [http://kubernetes.io/gettingstarted/](http://kubernetes.io/gettingstarted/).
+This document covers the basic depolyment procedure for Hypernetes. If you are looking for detailed depolyment of Kubernetes, refer to [https://kubernetes.io/docs/setup/](https://kubernetes.io/docs/setup/).
 
 ## Deploy OpenStack with Ceph
 
@@ -8,7 +8,7 @@ Since Hypernetes is working together with OpenStack, a OpenStack cluster must be
 
 * [OpenStack Installation Guide for Ubuntu 14.04](http://docs.openstack.org/kilo/install-guide/install/apt/content/)
 * [OpenStack Installation Guide for Red Hat](http://docs.openstack.org/kilo/install-guide/install/yum/content/)
-* [RDO](https://www.rdoproject.org/Main_Page)
+* [RDO](https://www.rdoproject.org)
 * [MAAS](http://www.ubuntu.com/download/cloud/install-ubuntu-openstack)
 * [Fuel](https://www.mirantis.com/products/mirantis-openstack-software/)
 * [devstack](http://docs.openstack.org/developer/devstack/)
@@ -23,11 +23,11 @@ Don't forget to deploy neutron L2 agent and Ceph client for Kubernetes nodes.
 
 Since Hypernetes is Kubernetes based, you can deploy Hypernetes following the same procedure as kubernetes. Here are some distribution-specific links:
 
-* [deploy Kubernetes on centos](http://kubernetes.io/v1.0/docs/getting-started-guides/centos/centos_manual_config.html)
-* [deploy Kubernetes on ubuntu](http://kubernetes.io/v1.0/docs/getting-started-guides/ubuntu.html)
-* [deploy Kubernetes on fedora](http://kubernetes.io/v1.0/docs/getting-started-guides/fedora/fedora_ansible_config.html)
+* [deploy Kubernetes on centos](https://kubernetes.io/docs/getting-started-guides/centos/centos_manual_config/)
+* [deploy Kubernetes on ubuntu](https://kubernetes.io/docs/getting-started-guides/ubuntu/)
+* [deploy Kubernetes on fedora](https://kubernetes.io/docs/getting-started-guides/fedora/fedora_ansible_config/)
 
-See more at [Kubernetes getstarted guide](http://kubernetes.io/gettingstarted/)
+See more at [Kubernetes getstarted guide](https://kubernetes.io/docs/setup/)
 
 ## Deploy KubeStack
 
